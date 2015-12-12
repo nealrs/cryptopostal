@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+ <meta name="robots" content="none">
+ <meta charset="utf-8">
+ <title>{{name}}</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,400italic' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+ <div class="main">
+  <div id="top">
+ 	  <img src="{{avatar}}" class="headshot">
+
+    <div id="auth">
+      <h2 class="headline">My address is a secret</h2>
+      <form>
+        <p>My middle name is: <input class="auth_input" id="fname" type="text" name="name" required></p>
+        <p>My phone number is: <input class="auth_input" id="fphone" type="tel" name="phone" required></p>
+        <br>
+        <a onclick="checkit();" class="auth_button">Gimme dat addy</a>
+      </form>
+        <p id="wrong" class="snippet">Wrong answer!</p>
+    </div>
+
+    <div id="addy">
+      <p class="snippet" id="myaddy"></p>
+      <p>
+       <a class="auth_button" id="myaddymap" href="" target="_blank">Map, directions, etc.</a>
+      </p>
+    </div>
+
+  </div>
+
+ </div>
+
+  <script type="text/javascript" src="sjcl.js"></script>
+  <script>
+    function checkit(){
+        var name = document.getElementById('fname').value;
+        var phone = document.getElementById('fphone').value.replace(/\D/g,'');
+        //console.log(name, phone);
+        var pass = name.toLowerCase().trim()+phone.toString();
+        //console.log(pass);
+
+        var e1 = '{{e1}}';
+        var e2 = '{{e2}}';
+        var e3 = '{{e3}}';
+
+        // verify decrypt key
+        try{
+          var d1 = sjcl.decrypt(pass, e1);
+        } catch (err){
+          document.getElementById('wrong').style.display = "block";
+        }
+
+        if (d1 == "{{testphrase}}"){
+
+          // if key is correct, decrypt address, update html, and unhide addy box.
+          var d2 = sjcl.decrypt(pass, e2);
+          var d3 = sjcl.decrypt(pass, e3);
+          //console.log(d2, d3);
+
+          console.log('ok, i guess you _do_ know me.');
+          document.getElementById('myaddy').innerHTML = d2;
+          document.getElementById('myaddymap').href = d3;
+
+          document.getElementById('auth').style.display = "none";
+          document.getElementById('addy').style.display = "block";
+          document.getElementById('wrong').style.display = "none";
+        }
+        window.scrollTo(0,0);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+body{
+  max-width:600px;
+  margin:auto;
+  padding:0;
+  font: 20px 'Vollkorn', serif;
+  color: #111111;
+}
+
+a {color: #11aacc; text-decoration: none; }
+a:active, a:hover {color: #0b768e;}
+/*a:visited {color: #85144B;}*/
+
+.main{
+  margin: 1rem;
+  line-height: 120%;
+}
+
+.headshot{
+ border:0;
+ border-radius:4px;
+ width: 180px;
+ vertical-align: middle;
+}
+
+p{
+  line-height: 140%;
+}
+
+#top{
+  text-align:center;
+}
+
+.headline{
+  font-family: 'Unica One', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #c31;
+}
+
+h3{
+  padding-bottom: .5rem;
+  border-bottom: 1px dotted;
+}
+
+.snippet{
+  background: #f0f0f0;
+  font-family: 'Consolas', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    letter-spacing: 0.015em;
+    padding: 0.3em;
+}
+
+#auth{}
+#addy{
+  display:none;
+}
+#wrong{
+  display:none;
+}
+
+.auth_input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #DDDDDD;
+  padding-left:.25rem;
+  padding-right:.25rem;
+  outline: none;
+  text-align:left;
+  margin:0;
+  font: 20px 'Vollkorn', serif;
+  color: #c31;
+  display:inline;
+  min-width: 1rem;
+}
+
+.auth_button {
+  color:#c31;
+  border:0.15rem solid #c31;
+  padding: .5rem .75rem;
+  border-radius:4px;
+  margin:.5rem;
+  cursor:pointer;
+}
+
+a.auth_button {
+  text-decoration:none;
+}
+
+a.auth_button:hover {
+  color: #fff;
+  background-color:#c31;
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+
+  .auth_input{
+    text-align:center;
+  }
+
+  .section{
+    padding-bottom:.25rem;
+  }
+
+}

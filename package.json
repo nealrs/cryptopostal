@@ -1,0 +1,34 @@
+{
+  "name": "cryptopostal",
+  "version": "1.0.0",
+  "description": "gate access to your mailing address with crypto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nealrs/cryptopostal.git"
+  },
+  "keywords": [
+    "encryption",
+    "postal",
+    "mailing",
+    "address",
+    "snail",
+    "mail",
+    "crypto"
+  ],
+  "dependencies": {
+    "sjcl": "latest"
+  },
+  "author": "Neal Shyam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nealrs/cryptopostal/issues"
+  },
+  "homepage": "https://github.com/nealrs/cryptopostal#readme",
+  "devDependencies": {
+    "mustache": "^2.2.0"
+  }
+}
