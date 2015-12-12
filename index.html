@@ -4,7 +4,7 @@
 <head>
  <meta name="robots" content="none">
  <meta charset="utf-8">
- <title>{{name}}</title>
+ <title>Doofus</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,400italic' rel='stylesheet' type='text/css'>
  <link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
@@ -19,13 +19,13 @@
 
  <div class="main">
   <div id="top">
- 	  <img src="{{avatar}}" class="headshot">
+ 	  <img src="https:&#x2F;&#x2F;media.giphy.com&#x2F;media&#x2F;RFdqSN1xVYJkA&#x2F;giphy.gif" class="headshot">
 
     <div id="auth">
       <h2 class="headline">My address is a secret</h2>
       <form>
-        <p>{{q1}} <input class="auth_input" id="fname" type="text" name="name" required></p>
-        <p>{{q2}} <input class="auth_input" id="fphone" type="tel" name="phone" required></p>
+        <p>Sting&#39;s crush: <input class="auth_input" id="fname" type="text" name="name" required></p>
+        <p>Jenny&#39;s number: <input class="auth_input" id="fphone" type="tel" name="phone" required></p>
         <br>
         <a onclick="checkit();" class="auth_button">Gimme dat addy</a>
       </form>
@@ -46,9 +46,9 @@
         var phone = document.getElementById('fphone').value.replace(/\D/g,'');
         var pass = name.toLowerCase().trim()+phone.toString();
 
-        var e1 = '{{{e1}}}';
-        var e2 = '{{{e2}}}';
-        var e3 = '{{{e3}}}';
+        var e1 = '{"iv":"SvXVvf/uhYoKMOp+XFALQA==","v":1,"iter":1000,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","salt":"6l7VXPB/gaM=","ct":"aKe9Cwyq3YVLGUNUxMUWzCSCXQ=="}';
+        var e2 = '{"iv":"rO2n6wCi4IOP7uvj25c0eQ==","v":1,"iter":1000,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","salt":"6l7VXPB/gaM=","ct":"FhtMjc1JI12Ap54S/NNHipKApX+6Rp3NReTOw6rdnGwm49ykYIp8iZHohWSmO+o="}';
+        var e3 = '{"iv":"o/tGcNCCzVfarV1CEZ8DsQ==","v":1,"iter":1000,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","salt":"6l7VXPB/gaM=","ct":"fEDszXIFP71oaJXW0I8/hQpH3RwfksjM0FPwXk+VfmIqVKwonf6xWCLLf/b0rTOs+8IWaWEwZlosWnZ/3RsiXJzOKL0aKj0wI9mJdNlLYYk8KYuIpfriBFuImxktiwW4BBjSjMirK+3MBMk+ah0YzXfwwnvkqyX8GnOr0hS2Uc9JjXaZYinc55pwFE+Cx8ZLev6JwpKUdiyUyNr7Aj8WT0RT1xWFVCLgKG5KWaV9eg=="}';
 
         // verify decrypt key
         try{
@@ -58,7 +58,7 @@
           document.getElementById('wrong').style.display = "block";
         }
 
-        if (d1 == "{{testphrase}}"){
+        if (d1 == "sup3rs3kr1t"){
           console.log('decrypt key verified')
           // if key is correct, decrypt address, update html, and unhide addy box.
           var d2 = sjcl.decrypt(pass, e2);
