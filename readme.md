@@ -47,7 +47,7 @@ When a visitor submits the form, the `checkit()` method does the following:
 I wrote a generator script in node so you can create your own Cryptopostal page just by filling in a few variables:
 
 1. Clone the repo
-2. Run `npm install --save-dev`
+2. Run `npm install`
 3. Edit variables in `index.js` (name, avatar, q1, q2, pass, d1, d2, d3)
 4. Run `node index.js`
 5. Upload `index.html` + the `css`, `js`, and `img` directories to you webhost.
