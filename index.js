@@ -13,7 +13,7 @@ var fs = require('fs');
 //////
 
 var name = "Devpost"; // person/org name
-var avatar = "devpost.png"; // path to headshot
+var avatar = "img/devpost.png"; // path to headshot
 var pass = "jessie5558675309"; // your passphrase (e.g. combo of your name + sanitized phone #)
 var testphrase = "f00bar"; // test phrase
 var d2 = "433 West 14th Street, Suite 3F<br>New York, NY 10014"; // street address -- leave the <br> in there.
